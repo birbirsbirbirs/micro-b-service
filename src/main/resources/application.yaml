@@ -7,15 +7,9 @@ spring:
 server:
   port: 8081
 
-management:
-  tracing:
-    baggage:
-      remote-fields: email
-      correlation:
-        fields: email
-    propagation:
-      type: w3c
-
-logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} -  %X{email} - %X{traceId}- %msg%n"
+#logging:
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} -  %X{email} - %X{traceId}- %msg%n"
+otel:
+  sdk:
+    disabled: true
