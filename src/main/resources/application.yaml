@@ -7,9 +7,3 @@ spring:
 server:
   port: 8081
 
-#logging:
-#  pattern:
-#    console: "%d{yyyy-MM-dd HH:mm:ss} -  %X{email} - %X{traceId}- %msg%n"
-otel:
-  sdk:
-    disabled: true
