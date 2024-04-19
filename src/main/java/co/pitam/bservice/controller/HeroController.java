@@ -1,6 +1,7 @@
 package co.pitam.bservice.controller;
 
 import co.pitam.bservice.model.Hero;
+import co.pitam.bservice.service.PtmAsynService;
 import io.micrometer.observation.annotation.Observed;
 import io.micrometer.tracing.Span;
 import io.micrometer.tracing.Tracer;
@@ -21,6 +22,7 @@ import java.util.List;
 public class HeroController {
 
     private final Tracer tracer;
+    private final PtmAsynService ptmAsynService;
 
 @Observed(
         name = "demoService"
@@ -36,6 +38,7 @@ public class HeroController {
                 .build();
         log.info("returning hero: {}", hero);
         Baggage currentBaggage = Baggage.current();
+        ptmAsynService.runLog();
         return hero;
     }
 }
