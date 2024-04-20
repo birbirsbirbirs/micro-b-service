@@ -2,7 +2,6 @@ package co.pitam.bservice.controller;
 
 import co.pitam.bservice.model.Hero;
 import co.pitam.bservice.service.PtmAsynService;
-import io.micrometer.observation.annotation.Observed;
 import io.micrometer.tracing.Span;
 import io.micrometer.tracing.Tracer;
 import io.opentelemetry.api.baggage.Baggage;
@@ -24,14 +23,11 @@ public class HeroController {
     private final Tracer tracer;
     private final PtmAsynService ptmAsynService;
 
-@Observed(
-        name = "demoService"
-)
     @GetMapping
-    public Hero getHero(@RequestHeader HttpHeaders headers){
-    Span span = tracer.currentSpan();
-    List<String> power = headers.get("power");
-    Faker faker = new Faker();
+    public Hero getHero(@RequestHeader HttpHeaders headers) {
+        Span span = tracer.currentSpan();
+        List<String> power = headers.get("power");
+        Faker faker = new Faker();
         Hero hero = Hero.builder()
                 .name(faker.name().fullName())
                 .power(faker.job().title())

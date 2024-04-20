@@ -30,8 +30,6 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-//    implementation 'io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter:2.3.0-alpha'
-
     implementation 'io.micrometer:micrometer-tracing-bridge-otel'
     implementation 'net.datafaker:datafaker:2.1.0'
 }
