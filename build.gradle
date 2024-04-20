@@ -32,6 +32,8 @@ dependencies {
 
     implementation 'io.micrometer:micrometer-tracing-bridge-otel'
     implementation 'net.datafaker:datafaker:2.1.0'
+
+    implementation 'de.idealo.spring:spring-cloud-stream-binder-sqs:3.0.0'
 }
 
 tasks.named('test') {

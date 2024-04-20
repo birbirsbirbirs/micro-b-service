@@ -7,6 +7,22 @@ spring:
 #  threads:
 #    virtual:
 #      enabled: false
+  cloud:
+    aws:
+      endpoint: http://localhost:4566
+      region:
+        static: us-west-1
+      credentials:
+        access-key: noop
+        secret-key: noop
+    stream:
+      bindings:
+        inputsqs-in-0:
+          destination: sqs-1
+          content-type: application/json
+          binder: sqs
+    function:
+      definition: inputsqs
 server:
   port: 8081
 
