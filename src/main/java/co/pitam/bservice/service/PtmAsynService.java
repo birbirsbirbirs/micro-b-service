@@ -19,7 +19,7 @@ public class PtmAsynService {
     @SneakyThrows
     public void runLog() {
         CurrentTraceContext currentTraceContext = tracer.currentTraceContext();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         log.info("logging from the async service!!!");
     }
 
