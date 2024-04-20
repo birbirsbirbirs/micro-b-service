@@ -1,8 +1,6 @@
 package co.pitam.bservice.config;
 
-import io.micrometer.tracing.Span;
 import io.micrometer.tracing.Tracer;
-import io.opentelemetry.context.Context;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,9 +19,12 @@ public class RestInterceptor extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info("doFilterInternal");
-        Span span = tracer.currentSpan();
-        Context currentContext = Context.current();
+        if(!tracer.getAllBaggage().containsKey("power")){
+            tracer.createBaggageInScope("power", null);
+        }
+        if(!tracer.getAllBaggage().containsKey("customerId")){
+            tracer.createBaggageInScope("customerId", null);
+        }
         filterChain.doFilter(request, response);
     }
 }
