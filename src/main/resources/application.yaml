@@ -17,18 +17,19 @@ spring:
         secret-key: noop
     stream:
       bindings:
-        inputsqs-in-0:
-          destination: sqs-1
+        input-in-0:
+#          destination: sqs-1
+          destination: channeldestination
           content-type: application/json
-          binder: sqs
+#          binder: sqs
     function:
-      definition: inputsqs
+      definition: input
 server:
   port: 8081
 
 logging:
   pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} - %thread - %X{traceId} - %X{power} -%X{customerId} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %thread - %X{traceId} - %X{power} -%X{customerId} - %logger{36} - %msg%n"
 
 management:
   tracing:
