@@ -10,7 +10,7 @@ public class PtmObservedAspectConfig {
     // To have the @Observed support we need to register this aspect
     @Bean
     ObservedAspect observedAspect(ObservationRegistry observationRegistry) {
-        observationRegistry.observationConfig().observationHandler(new PtmLoggingHandler());
+//        observationRegistry.observationConfig().observationHandler(new PtmLoggingHandler());
         return new ObservedAspect(observationRegistry);
     }
 
