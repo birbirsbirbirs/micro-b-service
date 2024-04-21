@@ -28,9 +28,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'net.datafaker:datafaker:2.1.0'
 
     implementation 'io.micrometer:micrometer-tracing-bridge-otel'
-    implementation 'net.datafaker:datafaker:2.1.0'
 
 //    implementation 'de.idealo.spring:spring-cloud-stream-binder-sqs:3.0.0'
     implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit:4.1.1'

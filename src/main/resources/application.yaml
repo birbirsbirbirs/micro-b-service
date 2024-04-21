@@ -29,7 +29,7 @@ server:
 
 logging:
   pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} - %thread - %X{traceId} - %X{power} -%X{customerId} - %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %thread - %X{traceId} - %X{power} -%X{customerId} - %X{orderId}- %logger{36} - %msg%n"
 
 management:
   tracing:
