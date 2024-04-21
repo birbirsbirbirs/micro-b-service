@@ -27,8 +27,8 @@ public class RestInterceptor extends OncePerRequestFilter {
 
         Map<String, String> allBaggage = tracer.getAllBaggage();
         List<String> fields = tracingProperties.getBaggage().getCorrelation().getFields();
-        fields.parallelStream().filter(p->!allBaggage.containsKey(p)).forEach(p->tracer.createBaggageInScope(p,null));
-
+//        fields.parallelStream().filter(p->!allBaggage.containsKey(p)).forEach(p->tracer.createBaggageInScope(p,null));
+//
         filterChain.doFilter(request, response);
     }
 }
