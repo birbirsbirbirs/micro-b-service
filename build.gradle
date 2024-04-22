@@ -32,6 +32,9 @@ dependencies {
     implementation 'io.micrometer:micrometer-tracing-bridge-otel'
     implementation 'io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter:2.3.0-alpha'
 
+    implementation "io.opentelemetry.instrumentation:opentelemetry-aws-sdk-2.2-autoconfigure"
+    implementation 'de.idealo.spring:spring-cloud-stream-binder-sqs:3.0.0'
+
     implementation 'net.datafaker:datafaker:2.1.0'
 }
 
