@@ -18,7 +18,7 @@ management:
 
 logging:
   pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} -  %X{email} - %X{traceId} - %X{spanId} - %t - %msg%n"
+    console: "%d{HH:mm:ss} - %t %X{traceId} %X{spanId} %X{email} %X{power}- %msg%n"
 
 otel:
   logs:
