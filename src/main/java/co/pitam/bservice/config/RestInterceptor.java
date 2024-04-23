@@ -18,7 +18,7 @@ import java.util.Enumeration;
 public class RestInterceptor extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info("doFilterInternal");
+//        log.info("doFilterInternal");
         Enumeration<String> headerNames = request.getHeaderNames();
         filterChain.doFilter(request, response);
     }
