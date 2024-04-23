@@ -20,8 +20,12 @@ spring:
           destination: sqs-1
           content-type: application/json
           binder: sqs
+        ptmrabbit-in-0:
+          destination: sqs-1
+          content-type: application/json
+          binder: rabbit
     function:
-      definition: ptmsqs
+      definition: ptmsqs;ptmrabbit
 
 management:
   tracing:
